@@ -1,0 +1,37 @@
+@use '../config/variaveis';
+
+@mixin botaoPadrao($background-color: variaveis.$corBotao) {
+  display: block;
+  background-color: $background-color;
+  color: variaveis.$corTextoClaro;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 8px;
+  margin-top: 8px;
+  text-decoration: none;
+  font-size: bold;
+}
+
+.products {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 32.66%);
+  column-gap: 1%;
+  row-gap: 4%;
+  width: 100%;
+  list-style: none;
+}
+
+.product-item img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.product-button {
+  @include botaoPadrao();
+}
+
+.product-button:hover {
+  background-color: lighten($color: variaveis.$corBotao, $amount: 10%);
+}
+
